@@ -21,3 +21,7 @@ fun sup(I,X,Y: set univ, F: I->X->Y) : X->Y {
 fun inf(I,X,Y: set univ, F: I->X->Y) : X->Y {
   { x:X, y:Y | all i: I | x->y in F[i] }
 }
+
+fun dual(X,Y: set univ, R: X->Y) : Y->X {
+	~(co[X,Y,R])
+}

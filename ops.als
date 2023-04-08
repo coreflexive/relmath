@@ -25,3 +25,12 @@ fun inf(I,X,Y: set univ, F: I->X->Y) : X->Y {
 fun dual(X,Y: set univ, R: X->Y) : Y->X {
 	~(co[X,Y,R])
 }
+
+-- Residuals
+fun ResL(X,Y,Z: set univ, R: X->Y, S: X->Z) : Y->Z {
+	co[Y,Z,(~R).(co[X,Z,S])]
+}
+
+fun ResR(X,Y,Z: set univ, R: X->Z, S: Y->Z) : X-> Y {
+	co[X,Y,(co[X,Z,R]).(~S)]
+}

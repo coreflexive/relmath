@@ -34,3 +34,10 @@ fun ResL(X,Y,Z: set univ, R: X->Y, S: X->Z) : Y->Z {
 fun ResR(X,Y,Z: set univ, R: X->Z, S: Y->Z) : X-> Y {
 	co[X,Y,(co[X,Z,R]).(~S)]
 }
+
+-- Symmetric Quotient
+fun syq(X,Y,Z: set univ, R: X->Y, S: X->Z) : Y->Z {
+  co[Y,Z,(~R).(co[X,Z,S])]
+	&
+	co[Y,Z,(dual[X,Y,R]).S]
+}

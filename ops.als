@@ -1,5 +1,5 @@
 fun co(X,Y: set univ, R: X->Y) : X->Y {
-	X->Y - R
+  X->Y - R
 }
 
 fun null(X,Y: set univ) : X->Y {
@@ -7,15 +7,15 @@ fun null(X,Y: set univ) : X->Y {
 }
 
 fun full(X,Y: set univ) : X->Y {
-	X->Y
+  X->Y
 }
 
 fun id(X: set univ) : X->X {
-	iden:>X
+  iden:>X
 }
 
 fun di(X: set univ) : X->X {
-	full[X,X] - id[X]
+  full[X,X] - id[X]
 }
 
 fun sup(I,X,Y: set univ, F: I->X->Y) : X->Y {
@@ -27,21 +27,21 @@ fun inf(I,X,Y: set univ, F: I->X->Y) : X->Y {
 }
 
 fun dual(X,Y: set univ, R: X->Y) : Y->X {
-	~(co[X,Y,R])
+  ~(co[X,Y,R])
 }
 
 -- Residuals
 fun ResL(X,Y,Z: set univ, R: X->Y, S: X->Z) : Y->Z {
-	co[Y,Z,(~R).(co[X,Z,S])]
+  co[Y,Z,(~R).(co[X,Z,S])]
 }
 
 fun ResR(X,Y,Z: set univ, R: X->Z, S: Y->Z) : X-> Y {
-	co[X,Y,(co[X,Z,R]).(~S)]
+  co[X,Y,(co[X,Z,R]).(~S)]
 }
 
 -- Symmetric Quotient
 fun syq(X,Y,Z: set univ, R: X->Y, S: X->Z) : Y->Z {
   co[Y,Z,(~R).(co[X,Z,S])]
-	&
-	co[Y,Z,(dual[X,Y,R]).S]
+  &
+  co[Y,Z,(dual[X,Y,R]).S]
 }

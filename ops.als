@@ -14,6 +14,10 @@ fun id(X: set univ) : X->X {
 	iden:>X
 }
 
+fun di(X: set univ) : X->X {
+	full[X,X] - id[X]
+}
+
 fun sup(I,X,Y: set univ, F: I->X->Y) : X->Y {
   { x:X, y:Y | some i: I | x->y in F[i] }
 }

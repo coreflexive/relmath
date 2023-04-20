@@ -11,3 +11,7 @@ pred injective(X,Y: set univ, R: X->Y) {
 pred total(X,Y: set univ, R: X->Y) {
   full[X,Y] in R.(full[Y,Y])
 }
+
+pred surjective(X,Y: set univ, R: X->Y) {
+  total[Y,X,~R]
+}

@@ -15,3 +15,13 @@ pred total(X,Y: set univ, R: X->Y) {
 pred surjective(X,Y: set univ, R: X->Y) {
   total[Y,X,~R]
 }
+
+pred mapping(X,Y: set univ, R: X->Y) {
+  total[X,Y,R]
+  univalent[X,Y,R]
+}
+
+pred bijective(X,Y: set univ, R: X->Y) {
+  surjective[X,Y,R]
+  injective[X,Y,R]
+}

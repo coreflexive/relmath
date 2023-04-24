@@ -25,3 +25,17 @@ pred bijective(X,Y: set univ, R: X->Y) {
   surjective[X,Y,R]
   injective[X,Y,R]
 }
+
+pred row_constant(V,W: set univ, R: V->W) {
+  R = R.(full[W,W])
+}
+
+pred vector(V,W: set univ, R: V->W) {
+  row_constant[V,W,R]
+}
+
+pred point(V,W: set univ, R: V->W) {
+  vector[V,W,R]
+  injective[V,W,R]
+  surjective[V,W,R]
+}

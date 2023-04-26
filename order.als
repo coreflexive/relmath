@@ -66,3 +66,16 @@ pred tournament(V: set univ, R: V->V) {
   asymmetric[V,R]
   semi_connex[V,R]
 }
+
+
+-- Transitivity
+
+pred transitive(V: set univ, R: V->V) {
+  all x,y,z:V {
+    { x->y in R
+      y->z in R
+    } implies {
+      x->z in R
+    }
+  }
+}

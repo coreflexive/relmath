@@ -79,3 +79,10 @@ pred transitive(V: set univ, R: V->V) {
     }
   }
 }
+
+
+-- Preorder
+pred preorder(V: set univ, R: V->V) {
+  reflexive[V,R]
+  transitive[V,R]
+}

@@ -1,6 +1,7 @@
 open ops
 
 -- Reflexivity
+
 pred reflexive(V: set univ, R: V->V) {
   all x:V | x->x in R
 }
@@ -9,7 +10,9 @@ pred irreflexive(V: set univ, R: V->V) {
   all x:V | x->x not in R
 }
 
+
 -- Connexity
+
 pred semi_connex(V: set univ, R: V->V) {
   all x,y:V {
     { x != y
@@ -28,7 +31,8 @@ pred connex(V: set univ, R: V->V) {
 }
 
 
--- Symmetry
+-- Symmetry Properties
+
 pred symmetric(V: set univ, R: V->V) {
   all x,y:V {
     x->y in R
@@ -82,7 +86,22 @@ pred transitive(V: set univ, R: V->V) {
 
 
 -- Preorder
+
 pred preorder(V: set univ, R: V->V) {
   reflexive[V,R]
   transitive[V,R]
+}
+
+
+-- Order and Strict Order
+
+pred order(V: set univ, E: V->V) {
+  transitive[V,E]
+  antisymmetric[V,E]
+  reflexive[V,E]
+}
+
+pred strict_order(V: set univ, C: V->V) {
+  transitive[V,C]
+  asymmetric[V,C]
 }

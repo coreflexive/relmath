@@ -105,3 +105,17 @@ pred strict_order(V: set univ, C: V->V) {
   transitive[V,C]
   asymmetric[V,C]
 }
+
+fun StrictOrder(V: set univ, E: V->V) : V->V {
+  di[V] & E
+}
+
+fun Order(V: set univ, C: V->V) : V->V {
+  id[V] + C
+}
+
+fun Hasse(V: set univ, E: V->V) : V->V {
+  let C = StrictOrder[V,E] {
+    C & co[V,V,C.C]
+  }
+}

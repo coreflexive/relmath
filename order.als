@@ -133,3 +133,11 @@ pred linear_strict_order(V: set univ, C: V->V) {
   semi_connex[V,C]
 }
 
+
+-- Equivalence and Quotient
+
+pred equivalence(V: set univ, K: V->V) {
+  reflexive[V,K]
+  transitive[V,K]
+  symmetric[V,K]
+}

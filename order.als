@@ -119,3 +119,17 @@ fun Hasse(V: set univ, E: V->V) : V->V {
     C & co[V,V,C.C]
   }
 }
+
+
+-- Linear orderings
+
+pred linear_order(V: set univ, E: V->V) {
+  order[V,E]
+  connex[V,E]
+}
+
+pred linear_strict_order(V: set univ, C: V->V) {
+  strict_order[V,C]
+  semi_connex[V,C]
+}
+

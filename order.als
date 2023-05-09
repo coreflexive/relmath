@@ -141,3 +141,24 @@ pred equivalence(V: set univ, K: V->V) {
   transitive[V,K]
   symmetric[V,K]
 }
+
+fun RowContains(V,W: set univ, R: V->W) : V->V {
+  ResR[V,V,W,R,R]
+}
+
+fun ColumnIsContained(V,W: set univ, R: V->W) : W->W {
+  ResL[V,W,W,R,R]
+}
+
+fun RowEquivalence(V,W: set univ, R: V->W) : V->V {
+  syq[W,V,V,~R,~R]
+}
+
+fun ColumnEquivalence(V,W: set univ, R: V->W) : W->W {
+  syq[V,W,W,R,R]
+}
+
+fun Section(V: set univ, R: V->V) : V->V {
+  RowContains[V,V,R]
+  & ColumnIsContained[V,V,R]
+}

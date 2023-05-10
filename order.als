@@ -162,3 +162,10 @@ fun Section(V: set univ, R: V->V) : V->V {
   RowContains[V,V,R]
   & ColumnIsContained[V,V,R]
 }
+
+
+-- Difunctional
+
+pred difunctional(V,W: set univ, Q: V->W) {
+  Q.~Q.Q in Q
+}

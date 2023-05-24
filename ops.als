@@ -45,3 +45,9 @@ fun syq(X,Y,Z: set univ, R: X->Y, S: X->Z) : Y->Z {
   &
   co[Y,Z,(dual[X,Y,R]).S]
 }
+
+
+-- Shrink
+fun shrink(A,B: set univ, R: A->B, S: B->B) : A->B {
+  R & ResL[B,A,B,~R,S]
+}

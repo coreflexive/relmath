@@ -71,6 +71,10 @@ pred tournament(V: set univ, R: V->V) {
   semi_connex[V,R]
 }
 
+-- Involution (EXTRA)
+pred involution(V: set univ, R: V->V) {
+  R.R = id[V]
+}
 
 -- Transitivity
 

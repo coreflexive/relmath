@@ -44,3 +44,8 @@ pred point(V,W: set univ, R: V->W) {
   injective[V,W,R]
   surjective[V,W,R]
 }
+
+-- Multivalency
+pred multivalent(V,W: set univ, R: V->W) {
+  R in R.(di[W])
+}

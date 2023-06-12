@@ -173,3 +173,14 @@ fun Section(V: set univ, R: V->V) : V->V {
 pred difunctional(V,W: set univ, Q: V->W) {
   Q.~Q.Q in Q
 }
+
+
+-- Transitive Closure
+
+fun tcl(V: set univ, R: V->V) : V->V {
+  ^R
+}
+
+fun star(V: set univ, R: V->V) : V->V {
+  id[V].*R
+}

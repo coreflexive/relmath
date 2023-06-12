@@ -184,3 +184,14 @@ fun tcl(V: set univ, R: V->V) : V->V {
 fun star(V: set univ, R: V->V) : V->V {
   id[V].*R
 }
+
+
+-- Left and Right Equivalence
+
+fun EqvL(V,W: set univ, R: V->W) : V->V {
+  star[V,R.~R]
+}
+
+fun EqvR(V,W: set univ, R: V->W) : W->W {
+  star[W,~R.R]
+}
